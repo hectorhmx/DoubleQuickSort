@@ -135,11 +135,7 @@ def quickSort(arr,low,high):
     global tiempo
     tiempo += 1
     if low < high:
-        # pi is partitioning index, arr[p] is now
-        # at right place
         pi = partition(arr,low,high)
-        # Separately sort elements before
-        # partition and after partition
         quickSort(arr, low, pi-1)
         quickSort(arr, pi+1, high)
 
@@ -175,7 +171,6 @@ def DoubleQuickSort(arreglo):
             continv+=1
             
     if(continv == len(arreglo)-1):
-        arreglo = list(range(0,8))
         for i in range(0,ceil(len(arreglo)/2)):
             tiempo+=1
             aux = arreglo[i]
@@ -240,7 +235,7 @@ def arregloAlAzar(numero):
     return arreglo
 
 
-# In[76]:
+# In[83]:
 
 
 def comparacion(funcion, hector):
@@ -276,11 +271,13 @@ def comparacion(funcion, hector):
                 azar.sort()
                 azar.reverse()
                 ##elemento a invertir
-                invelm = 0
+                invelm = num_azar(0,len(azar)-1)
+                #invelm = 0
+                #print(invelm)
                 azar[len(azar)-1],azar[invelm]=azar[invelm],azar[len(azar)-1]
                 if(i==299):
                     print(azar,"Lista desordenada","azar peor caso")
-                    print(entro)
+                    #print(entro)
             azarito = copy(azar)
             if(i==299):
                 print(azarito,"Lista desordenada")
